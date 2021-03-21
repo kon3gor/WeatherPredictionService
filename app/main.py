@@ -10,21 +10,21 @@ def index():
     return "Hello world"
 
 @app.route('/getPredictionForDay/<city>/<day>')
-def getPredictionForDay(day, city):
+def getPredictionForDay(city, day):
     assert day == request.view_args['day']
     assert city == request.view_args['city']
     result = utils.predictForDay(day, city)
     return json.dumps(result)
 
 @app.route('/getPredictionForMonth/<city>/<month>')
-def getPredictionForMonth(month, city):
+def getPredictionForMonth(city, month):
     assert month == request.view_args['month']
     assert city == request.view_args['city']
     result = utils.predictForMonth(month, city)
     return json.dumps(result)
 
 @app.route('/getPredictionForYear/<city>/')
-def getPredictionForYear(year, city):
-    assert year == request.view_args['year']
+def getPredictionForYear(city):
+    assert city == request.view_args['city']
     result = utils.predictForYear(city)
     return json.dumps(result)
