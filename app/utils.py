@@ -4,6 +4,11 @@ import numpy as np
 
 SRC = "/app/app/models/"
 
+
+"""
+Утильные методы
+"""
+
 def getDayRange(month):
     if month == "1":
         return range(1, 32)
@@ -44,6 +49,14 @@ def getCityNameById(id):
     elif id == 10: return "Таежный"
     elif id == 11: return "Южный"
     elif id == 12: return "Северный"
+
+"""
+Утильные методы
+"""
+
+"""
+Методы для работы с нейронными сетями
+"""
 
 def predictForDay(day, cityId):
     city = getCityNameById(cityId)

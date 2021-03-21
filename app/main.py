@@ -9,6 +9,9 @@ app = Flask(__name__)
 def index():
     return "Hello world"
 
+"""
+Метод для получения прогноза на день
+"""
 @app.route('/getPredictionForDay/<city>/<day>')
 def getPredictionForDay(city, day):
     assert day == request.view_args['day']
@@ -22,6 +25,9 @@ def getPredictionForDay(city, day):
     result = utils.predictForDay(day, city)
     return json.dumps(result.tolist())
 
+"""
+Метод для получения прогноза на месяц
+"""
 @app.route('/getPredictionForMonth/<city>/<month>')
 def getPredictionForMonth(city, month):
     assert month == request.view_args['month']
@@ -34,6 +40,9 @@ def getPredictionForMonth(city, month):
     result = utils.predictForMonth(month, city)
     return json.dumps(result.tolist())
 
+"""
+Метод для получения прогноза на год
+"""
 @app.route('/getPredictionForYear/<city>/')
 def getPredictionForYear(city):
     assert city == request.view_args['city']
