@@ -20,7 +20,7 @@ def getPredictionForDay(city, day):
     if day < 1 or day > 365:
         return "Error"
     result = utils.predictForDay(day, city)
-    return json.dumps(result)
+    return json.dumps(result.tolist())
 
 @app.route('/getPredictionForMonth/<city>/<month>')
 def getPredictionForMonth(city, month):
@@ -32,7 +32,7 @@ def getPredictionForMonth(city, month):
     if int(month) < 1 or int(month) > 12:
         return "Error"
     result = utils.predictForMonth(month, city)
-    return json.dumps(result)
+    return json.dumps(result.tolist())
 
 @app.route('/getPredictionForYear/<city>/')
 def getPredictionForYear(city):
@@ -41,4 +41,4 @@ def getPredictionForYear(city):
     if city < 0 or city >  12:
         return "Error"
     result = utils.predictForYear(city)
-    return json.dumps(result)
+    return json.dumps(result.tolist())
