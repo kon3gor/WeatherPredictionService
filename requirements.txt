@@ -11,3 +11,4 @@ Flask-Security-Too==3.4.2
 Flask-SQLAlchemy==2.1
 Flask-WTF==0.14.2
 numpy==1.19.5
+scikit-learn==0.24.1
