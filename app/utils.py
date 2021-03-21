@@ -30,7 +30,23 @@ def getDayRange(month):
     elif month == "12":
         return range(345, 367)
 
-def predictForDay(day, city):
+def getCityNameById(id):
+    if id == 0: return "Алмазный"
+    elif id == 1: return "Западный"
+    elif id == 2: return "Курортный"
+    elif id == 3: return "Лесной"
+    elif id == 4: return "Научный"
+    elif id == 5: return "Полярный"
+    elif id == 6: return "Портовый"
+    elif id == 7: return "Приморский"
+    elif id == 8: return "Садовый"
+    elif id == 9: return "Степной"
+    elif id == 10: return "Таежный"
+    elif id == 11: return "Южный"
+    elif id == 12: return "Северный"
+
+def predictForDay(day, cityId):
+    city = getCityNameById(cityId)
     modelFile = city+"_model.sav"
     model = pickle.load(open(SRC + modelFile, "rb"))
 
@@ -39,7 +55,8 @@ def predictForDay(day, city):
     res = model.predict(x)
     return res
 
-def predictForMonth(month, city):
+def predictForMonth(month, cityId):
+    city = getCityNameById(cityId)
     modelFile = city+"_model.sav"
     model = pickle.load(open(SRC + modelFile, "rb"))
 
@@ -50,7 +67,8 @@ def predictForMonth(month, city):
     res = model.predict(x)
     return res
 
-def predictForMonth(city):
+def predictForMonth(cityId):
+    city = getCityNameById(cityId)
     modelFile = city+"_model.sav"
     model = pickle.load(open(SRC + modelFile, "rb"))
 
