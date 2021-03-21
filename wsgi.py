@@ -1,5 +1,5 @@
 from app.main import app
-from app/tests import unit
+from app.tests import unit
 
 def runTests():
     unti.testGetCityById()
@@ -7,4 +7,4 @@ def runTests():
 
 if __name__ == "__main__":
         app.run()
-        runTests
+        runTests()
