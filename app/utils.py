@@ -2,7 +2,7 @@ import pickle
 import os
 import numpy as np
 
-SRC = "./models/"
+SRC = "/app/app/models/"
 
 def getDayRange(month):
     if month == "1":
