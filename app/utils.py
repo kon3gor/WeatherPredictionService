@@ -67,7 +67,7 @@ def predictForMonth(month, cityId):
     res = model.predict(x)
     return res
 
-def predictForMonth(cityId):
+def predictForYear(cityId):
     city = getCityNameById(cityId)
     modelFile = city+"_model.sav"
     model = pickle.load(open(SRC + modelFile, "rb"))
