@@ -2,7 +2,7 @@ import pickle
 import os
 import numpy as np
 
-SRC = "/home/kon3gor/Documents/projects/temperatureLinearRegression/server/app/models/"
+SRC = "./models/"
 
 def getDayRange(month):
     if month == "1":
